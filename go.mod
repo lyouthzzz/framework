@@ -8,6 +8,7 @@ require (
 	github.com/google/uuid v1.2.0
 	github.com/opentracing-contrib/go-gin v0.0.0-20201220185307-1dd2273433a4
 	github.com/opentracing/opentracing-go v1.2.0
+	github.com/pkg/errors v0.8.1
 	github.com/rs/zerolog v1.20.0
 	github.com/stretchr/testify v1.7.0
 	golang.org/x/sync v0.0.0-20190423024810-112230192c58
