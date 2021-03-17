@@ -3,7 +3,7 @@ package authn
 import (
 	"context"
 	"github.com/gin-gonic/gin"
-	"github.com/lyouthzzz/framework/filter/auth/user"
+	"github.com/lyouthzzz/framework/pkg/auth/user"
 	"net/http"
 )
 

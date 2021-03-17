@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/lyouthzzz/framework/gormutil"
-	"github.com/lyouthzzz/framework/gormutil/log"
-	"github.com/lyouthzzz/framework/gormutil/migration"
+	"github.com/lyouthzzz/framework/pkg/gormx"
+	"github.com/lyouthzzz/framework/pkg/gormx/log"
+	"github.com/lyouthzzz/framework/pkg/gormx/migration"
 	"gorm.io/gorm"
 )
 

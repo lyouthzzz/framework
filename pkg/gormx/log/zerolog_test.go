@@ -2,7 +2,6 @@ package log
 
 import (
 	"context"
-	"github.com/lyouthzzz/framework/gormutil"
 	"github.com/rs/zerolog/log"
 	"github.com/stretchr/testify/require"
 	"testing"

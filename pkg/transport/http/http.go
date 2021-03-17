@@ -3,7 +3,7 @@ package http
 import (
 	"github.com/DeanThompson/ginpprof"
 	"github.com/gin-gonic/gin"
-	"github.com/lyouthzzz/framework/transport/http/middleware"
+	"github.com/lyouthzzz/framework/pkg/transport/http/middleware"
 	"github.com/opentracing-contrib/go-gin/ginhttp"
 	"github.com/opentracing/opentracing-go"
 	"github.com/rs/zerolog"
