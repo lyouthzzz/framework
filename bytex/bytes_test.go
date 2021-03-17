@@ -1,4 +1,4 @@
-package bytesutil
+package bytex
 
 import (
 	"github.com/stretchr/testify/require"

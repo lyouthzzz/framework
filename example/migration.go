@@ -2,25 +2,30 @@ package main
 
 import (
 	"github.com/lyouthzzz/framework/gormutil"
+	"github.com/lyouthzzz/framework/gormutil/log"
 	"github.com/lyouthzzz/framework/gormutil/migration"
 	"gorm.io/gorm"
 )
 
 func main() {
 	var migrations = []migration.Migration{
-		migration.NewMigration("11", func(db *gorm.DB) error {
-			if db.Migrator().HasTable("demo") {
-				return db.Migrator().DropTable("demo")
+		migration.NewMigration("add user", func(db *gorm.DB) error {
+			type User struct {
+				Name  string
+				Email string
 			}
-			return nil
+			return db.Migrator().CreateTable(&User{})
 		}),
 	}
-	db, err := gormutil.Connect(gormutil.MysqlDns("root", "root", "localhost", 3306, "framework", ""), true)
+	db, err := gormx.Connect(gormx.MysqlDns("root", "liuyanggg.123", "localhost", 3306, "go_admin", ""), true)
 	if err != nil {
 		panic(err)
 	}
+
+	db.Logger = log.New()
 	err = migration.Migrate(db, migrations...)
 	if err != nil {
 		panic(err)
 	}
+
 }

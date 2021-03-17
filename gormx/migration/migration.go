@@ -41,10 +41,12 @@ func Migrate(db *gorm.DB, migrations ...Migration) error {
 	}
 	for _, migration := range migrations {
 		mm := model{ID: migration.ID()}
-		if err := db.Find(&mm).Error; err != nil {
+
+		tx := db.Find(&mm)
+		if err := tx.Error; err != nil {
 			return err
 		}
-		if db.RowsAffected == 0 {
+		if tx.RowsAffected == 0 {
 			if err := migration.Migrate(db); err != nil {
 				return err
 			}

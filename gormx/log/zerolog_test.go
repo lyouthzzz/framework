@@ -14,7 +14,7 @@ type User struct {
 }
 
 func TestZeroLog(t *testing.T) {
-	db, err := gormutil.Connect(gormutil.MysqlDns("root", "root", "localhost", 3306, "framework", ""), true)
+	db, err := gormx.Connect(gormx.MysqlDns("root", "root", "localhost", 3306, "framework", ""), true)
 	require.NoError(t, err)
 
 	db.Logger = New()
