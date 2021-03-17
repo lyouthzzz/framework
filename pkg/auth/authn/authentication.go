@@ -39,11 +39,13 @@ func NewAuthenticator(authN Authenticator) gin.HandlerFunc {
 		authentication, err := authN.GetAuthentication(ctx, c.Request)
 		if err != nil {
 			authN.AuthenticateFailedCB(c.Writer, err)
+			c.Abort()
 			return
 		}
 		userInfo, err := authN.Authenticate(ctx, authentication)
 		if err != nil {
 			authN.AuthenticateFailedCB(c.Writer, err)
+			c.Abort()
 			return
 		}
 
