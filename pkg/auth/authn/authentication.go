@@ -24,6 +24,8 @@ type Authenticator interface {
 	AddAuthentication(ctx context.Context, req *http.Request, authentication interface{}) error
 	// 写入鉴权信息
 	WriteAuthentication(ctx context.Context, authentication interface{}, userInfo user.Info) error
+	// 删除鉴权信息
+	DeleteAuthentication(ctx context.Context, authentication interface{}) error
 	// 鉴权验证
 	Authenticate(ctx context.Context, authentication interface{}) (user.Info, error)
 	// 鉴权失败
